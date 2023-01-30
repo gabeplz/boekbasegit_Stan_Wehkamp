@@ -1,0 +1,165 @@
+insert into Filiaal(plaats)
+values
+('0205231481'),
+('0302335200'),
+('0104132070'),
+('0733020100'),
+('0612345678'),
+('0623456789'),
+('0634567890');
+
+
+insert into Filiaal(filiaalid, plaats, adressadress, telefoonnummer)
+values
+('1','Amsterdam', SELECT adres from Adres where adres ='Rokin 9', Select telefoonnummer from Telefoonnummer where telefoonnummer = '205231481' ),
+('2','Utrecht' , SELECT adres from Adres where adres ='Oudegracht 112-b', Select telefoonnummer from Telefoonnummer where telefoonnummer = '302335200'),
+('3','Den Haag', SELECT adres from Adres where adres ='Coolsingel 129', Select telefoonnummer from Telefoonnummer where telefoonnummer = '104132070'),
+('4','s-hertogenbosch', SELECT adres from Adres where adres='Kerkstraat 27', Select telefoonnummer from Telefoonnummer where telefoonnummer = '733020100');
+
+insert into Filiaal(filiaalid, plaats, adresadres, telefoonnummer)
+values
+('1','Amsterdam', 'Rokin 9', '205231481' ),
+('2','Utrecht' , 'Oudegracht 112-b', '302335200'),
+('3','Den Haag', 'Coolsingel 129', '104132070'),
+('4','s-hertogenbosch','Kerkstraat 27', '733020100');
+
+select * from telefoonnummer,filiaal Where telefoonnummer.telefoonnummer = filiaal.telefoonnummer
+
+
+insert into klantaccount(klantid, email, naam, plaats, adres, telefoonnummer)
+values
+('1','a_devries@adelaarsnest.nl', 'Arend de Vries', 'Haarlem','Adelaarsnest 12', '0612345678' ),
+('2','bboer@boeren.nl', 'Bert Boer', 'Dorp','Mesthoop 1','0623456789'),
+('3','c_kordaat@gmail.com', 'Cornelis Kordaat', 'Utrecht', 'Kerkstraat 11', '0634567890');
+
+insert into autheur(autheurid, naam, geboortejaar, wikipedialink)
+values
+('1','Terry Prachett', '1948-1-1', 'https://en.wikipedia.org/wiki/Terry_Pratchett'),
+('2','Guy Haley', '1973-1-1', 'https://en.wikipedia.org/wiki/Guy_Haley'),
+('3','Jonas Geirnaert', '1982-1-1', 'https://nl.wikipedia.org/wiki/Jonas_Geirnaert'),
+('4','Bruce Bueno de Mesquita', '1946-1-1', 'https://en.wikipedia.org/wiki/Bruce_Bueno_de_Mesquita'),
+('5','Thea Beckman', '1923-1-1', 'https://en.wikipedia.org/wiki/Thea_Beckman'),
+('6','Roald Dahl', '1916-1-1', 'https://en.wikipedia.org/wiki/Roald_Dahl');
+
+insert into boek(isbn, jaarvanuitgave, titel, prijs, autheurid)
+values
+('9780861403240','1938-1-1', 'The color of magic', '20','1'),
+('9781784962661','2016-1-1', 'Crusaders of Dorn', '65','2'),
+('9789076168531','2023-1-1', 'Het grote kabouter wesley boek', '100000', '3'),
+('9781789992717','2020-1-1', 'Astrogath angel of mercy', '15.95', '2'),
+('9780385611015','2007-1-1', 'Making money', '16', '1'),
+('9781610390446','2011-1-1', 'The dictators handbook', '17', '4'),
+('9789056378585','1973-1-1', 'Kruistocht in spijkerbroek', '12.50', '5'),
+('9780575055032','1993-1-1', 'Man at arms', '16.50', '1'),
+('9789026141614','1976-1-1', 'Daantje de wereldkampioen', '50', '6'),
+('9780575049802','1991-1-1', 'Witches abroad', '17.20', '1');
+
+insert into Adres(adres)
+values
+('Uitgeverstraat 1'),
+('Uitgeverstraat 2'),
+('Uitgeverstraat 3');
+
+insert into Telefoonnummer(telefoonnummer)
+values
+('1234567891'),
+('1234567892'),
+('1234567893');
+
+insert into uitgever(uitgeverid, naam, plaats, websitelink, boekisbn, adres, telefoonnummer)
+values
+('1','Colin Smythe Ltd', 'Gerrards Cross', 'https://colinsmythe.co.uk/','9780861403240','Uitgeverstraat 1','1234567891'),
+('2','Games Workshop', 'Nottingham', 'https://www.games-workshop.com/','9781784962661','Uitgeverstraat 2','1234567892'),
+('3','Grote smurf inc', 'smurfendorp', 'https://www.kabouterwesley.com/','9789076168531','Uitgeverstraat 3','1234567893'),
+('4','black library', 'Nottingham', 'https://www.blacklibrary.com/','9781789992717','Uitgeverstraat 1','1234567891'),
+('5','Doubleday', 'uk', 'https://www.Doubleday.com/','9780385611015','Uitgeverstraat 2','1234567892'),
+('6','PublicAffairs', 'New York City', 'https://www.publicaffairsbooks.com/','9781610390446','Uitgeverstraat 3','1234567893'),
+('7','Lemniscaat', 'Rotterdam', 'https://www.Lemniscaat.com/','9789056378585','Uitgeverstraat 1','1234567891'),
+('8','Gollancz', 'London', 'https://www.Gollancz.com/','9780575055032','Uitgeverstraat 2','1234567892'),
+('9','De Fontein', 'Utrecht', 'https://www.UitgeverijDeFontein.nl/','9789026141614','Uitgeverstraat 3','1234567893'),
+('10','V Gollancz', 'London', 'https://www.therealgollanz.com/','9780575049802','Uitgeverstraat 1','1234567891');
+
+insert into filiaalboekvooraad(filiaalid, isbn,aantal)
+values
+('1','9780861403240','21'),
+('1','9781784962661','33'),
+('1','9789076168531','34'),
+('1','9781789992717','53'),
+('1','9780385611015','65'),
+('1','9781610390446','23'),
+('1','9789056378585','21'),
+('1','9780575055032','11'),
+('1','9789026141614','12'),
+('1','9780575049802','23'),
+
+('2','9780861403240','0'),
+('2','9781784962661','24'),
+('2','9789076168531','23'),
+('2','9781789992717','22'),
+('2','9780385611015','24'),
+('2','9781610390446','25'),
+('2','9789056378585','26'),
+('2','9780575055032','21'),
+('2','9789026141614','1'),
+('2','9780575049802','26'),
+
+('3','9780861403240','30'),
+('3','9781784962661','52'),
+('3','9789076168531','32'),
+('3','9781789992717','23'),
+('3','9780385611015','32'),
+('3','9781610390446','21'),
+('3','9789056378585','13'),
+('3','9780575055032','63'),
+('3','9789026141614','40'),
+('3','9780575049802','20');
+
+insert into winkelmand(klantid, mandid)
+values
+('1','1'),
+('2','2'),
+('3','3'),
+('1','4');
+
+insert into mandinhoud(winkelmandmandid,isbn,aantal)
+values
+('1','9780861403240','1'),
+('2','9781784962661','4'),
+('3','9780861403240','3'),
+('4','9781784962661','1');
+
+insert into mandinhoud(winkelmandmandid,isbn,aantal)
+values
+('1','9789076168531','1');
+
+select boek.isbn, titel, aantal from boek, mandinhoud
+where boek.isbn = mandinhoud.isbn
+
+
+
+
+select boek.isbn, titel, aantal, klantaccount.klantid, email, klantaccount.naam from boek, mandinhoud,winkelmand, klantaccount
+where boek.isbn = mandinhoud.isbn and mandinhoud.winkelmandmandid = winkelmand.mandid and klantaccount.klantid =1
+
+DELETE FROM mandinhoud
+WHERE isbn = 9789076168531;
+
+
+
+select filiaalboekvooraad.filiaalid, filiaalboekvooraad.isbn, titel, aantal  from filiaal, filiaalboekvooraad, boek
+where filiaalboekvooraad.filiaalid = filiaal.filiaalid and boek.isbn = filiaalboekvooraad.isbn
+
+
+select autheur.autheurid, autheur.naam, uitgever.naam from autheur, uitgever, boek
+where uitgever.boekisbn = boek.isbn and autheur.autheurid = boek.autheurid
+
+select titel from boek
+WHERE titel LIKE 'a%' or titel like 'b%'
+
+select uitgever.naam, avg(boek.prijs) as gemiddeld from uitgever, boek
+where uitgever.boekisbn = boek.isbn
+group by uitgever.naam
+
+select boek.prijs, sum(aantal) as totaal from boek, mandinhoud
+WHERE boek.isbn = mandinhoud.isbn and prijs >= 10
+group by boek.prijs
